@@ -2,7 +2,7 @@
 # Distributed under the terms of the BSD license
 
 EAPI=6
-PYTHON_COMPAT=( python{3_5,3_6} )
+PYTHON_COMPAT=( python{3_8,3_9,3_10} )
 
 inherit ament-cmake
 
@@ -35,8 +35,6 @@ RDEPEND="
 	ros-humble/rmf_utils
 	ros-humble/rmf_websocket
 	ros-humble/std_msgs
-	ros-humble/stubborn_buddies
-	ros-humble/stubborn_buddies_msgs
 	test? ( ros-humble/ament_cmake_catch2 )
 	test? ( ros-humble/ament_cmake_uncrustify )
 	dev-cpp/nlohmann_json

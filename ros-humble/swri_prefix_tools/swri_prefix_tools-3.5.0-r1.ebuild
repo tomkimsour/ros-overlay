@@ -2,7 +2,7 @@
 # Distributed under the terms of the BSD license
 
 EAPI=6
-PYTHON_COMPAT=( python{3_5,3_6} )
+PYTHON_COMPAT=( python{3_8,3_9,3_10} )
 
 inherit ament-cmake
 
@@ -15,7 +15,6 @@ LICENSE="BSD"
 
 KEYWORDS="~x86 ~amd64 ~arm ~arm64"
 RDEPEND="
-	dev-python/psutil
 	dev-python/psutil
 "
 DEPEND="${RDEPEND}

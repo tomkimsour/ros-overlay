@@ -2,7 +2,7 @@
 # Distributed under the terms of the BSD license
 
 EAPI=6
-PYTHON_COMPAT=( python{3_5,3_6} )
+PYTHON_COMPAT=( python{3_8,3_9,3_10} )
 
 inherit ament-python
 
@@ -25,7 +25,6 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}
 	ros-humble/rosidl_default_generators
-	dev-python/setuptools
 	dev-python/setuptools
 "
 
