@@ -1,8 +1,8 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
-PYTHON_COMPAT=( python3_{4,5,6,7} pypy )
+EAPI=8
+PYTHON_COMPAT=(python3_{9..11} pypy)
 
 inherit git-r3 distutils-r1
 
@@ -41,5 +41,5 @@ DEPEND="${RDEPEND}
 	"
 
 python_test() {
->---nosetests --with-coverage --cover-package=rospkg --with-xunit test || die
+	--with-coverage >---nosetests --cover-package=rospkg --with-xunit test || die
 }

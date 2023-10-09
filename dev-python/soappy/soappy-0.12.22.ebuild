@@ -1,9 +1,9 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=8
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=(python3_{9..11})
 PYTHON_REQ_USE="ssl?,xml"
 
 inherit distutils-r1
@@ -13,7 +13,7 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="SOAP Services for Python"
 HOMEPAGE="http://pywebsvcs.sourceforge.net/ https://pypi.org/project/SOAPpy/"
-SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.zip"
+SRC_URI="https://github.com/kiorky/SOAPpy/archive/refs/tags/${PV}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-DOCS=( CHANGES.txt README.txt docs/. )
+DOCS=(CHANGES.txt README.txt docs/.)
 
 python_install_all() {
 	if use examples; then
@@ -41,4 +41,3 @@ python_install_all() {
 
 	distutils-r1_python_install_all
 }
-

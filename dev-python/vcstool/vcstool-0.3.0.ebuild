@@ -1,7 +1,7 @@
 # Copyright 2021 Open Source Robotics Foundation
 # Distributed under the terms of the BSD license
 EAPI=8
-PYTHON_COMPAT=( python3_{8..10} pypy3 )
+PYTHON_COMPAT=(python3_{8..11} pypy3)
 
 inherit distutils-r1
 

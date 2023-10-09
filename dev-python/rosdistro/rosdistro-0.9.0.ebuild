@@ -1,22 +1,18 @@
-EAPI=8
+EAPI=7
 PYTHON_COMPAT=(python3_{9..11})
 
 inherit distutils-r1
 
-DESCRIPTION="Package manager for ROS."
-HOMEPAGE="http://wiki.ros.org/rosdep"
+DESCRIPTION="A tool to work with rosdistro files"
+HOMEPAGE="http://wiki.ros.org/rosdistro"
 SRC_URI="https://github.com/ros-infrastructure/${PN}/archive/refs/tags/${PV}.tar.gz"
 
-LICENSE="BSD-2"
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm ~arm64"
+KEYWORDS="~amd64 ~x86 ~arm"
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
-		>=dev-python/nose-1.0[${PYTHON_USEDEP}]
-		>=dev-python/pyyaml-3.1[${PYTHON_USEDEP}]
-		>=dev-python/rosdistro-0.3.0[${PYTHON_USEDEP}]
+		dev-python/pyyaml[${PYTHON_USEDEP}]
 		dev-python/catkin_pkg[${PYTHON_USEDEP}]
 		dev-python/rospkg[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
-
-# @todo tests

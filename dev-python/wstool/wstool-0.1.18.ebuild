@@ -1,5 +1,5 @@
 EAPI=7
-PYTHON_COMPAT=( python3_{8..10} pypy3)
+PYTHON_COMPAT=(python3_{8..11} pypy3)
 
 inherit distutils-r1
 
@@ -38,7 +38,7 @@ python_test() {
 	git config --global user.email "foo@example.com"
 	git config --global user.name "Foo Bar"
 	# Set the hg user
-	echo -e "[ui]\nusername = Your Name <your@mail.com>" >> ~/.hgrc
+	echo -e "[ui]\nusername = Your Name <your@mail.com>" >>~/.hgrc
 	# Set the bzr user
 	bzr whoami "Your Name <name@example.com>"
 	# command to run tests
