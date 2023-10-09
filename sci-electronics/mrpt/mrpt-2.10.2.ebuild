@@ -1,13 +1,15 @@
 # Copyright 2017 Open Source Robotics Foundation
 # Distributed under the terms of the BSD License
 
-EAPI=7
+EAPI=8
 
-inherit cmake flag-o-matic
+inherit git-r3 cmake flag-o-matic xdg
 
 DESCRIPTION="Mobile Robot Programming Toolkit"
 HOMEPAGE="http://www.mrpt.org/"
-SRC_URI="https://github.com/MRPT/${PN}/archive/${PV}.tar.gz -> ${PN}-${PV}.tar.gz"
+#Fix submodules on new versions
+EGIT_REPO_URI="https://github.com/MRPT/mrpt.git"
+EGIT_COMMIT="${PV}"
 
 LICENSE="BSD-3-Clause"
 # Subslot = major version = soname of libs
@@ -30,13 +32,15 @@ RDEPEND="
 	sci-libs/pcl
 	virtual/udev
 	net-libs/libpcap
+	sci-libs/octomap
 "
 DEPEND="${RDEPEND}"
 CMAKE_BUILD_TYPE=RelWithDebInfo
 
-src_unpack() {
-	default
-	cd ${P}
-	EPATCH_SOURCE="${FILESDIR}" EPATCH_SUFFIX="patch" \
-		EPATCH_FORCE="yes" epatch
+pkg_postinst() {
+	xdg_pkg_postinst
+}
+
+pkg_postrm() {
+	xdg_pkg_postrm
 }
