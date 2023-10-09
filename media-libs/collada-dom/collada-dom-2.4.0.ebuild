@@ -1,6 +1,8 @@
-EAPI=5
+#Change in future for dev-libs/collada-dom in gentoo tree
 
-inherit cmake-utils
+EAPI=8
+
+inherit cmake
 
 DESCRIPTION="API that provides a C++ object representation of a COLLADA XML instance document"
 HOMEPAGE="http://collada.org/mediawiki/index.php/COLLADA_DOM"
